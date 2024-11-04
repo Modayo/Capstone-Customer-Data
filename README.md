@@ -6,8 +6,7 @@ This project is one of the data analysis project submitted as one of the require
 ## **PROJECT OVERVIEW**
 ---
 
-This project requires an in-depth study of sales and revenue generation pattern by region and product to draw insightful conclusion on the various categories of product.
-The retail store needs an insight into their top performing products and region. Similarly, the store is interested in their monthly sales performance vis-a-viz quantity and the attendant revenue generation per product and Region. It is expected that an interactive power BI dashboard will be produced for the store.
+This project requires an in-depth study of subscription pattern of the customers of a Tech Company. The company seeks to understand the most preferable subscription package among their customers. Thereby gaining an insight into their top performing products and region in terms of subscribers' retention, subscription packages and revenue generation.  It is expected that an interactive power BI dashboard will be produced for the store.
 
 ## **OBJECTIVES**
 ---
