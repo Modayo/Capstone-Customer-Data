@@ -31,8 +31,49 @@ The data analysis tools used for the project are
 3.  Microsoft Power Bi
     -  For Visualization and Report
   
-
+## **EXPLORATORY DATA ANALYSIS**
  ![Customer Data Project 2](https://github.com/user-attachments/assets/618505cf-0129-42e6-b728-07645c2027e0)
+
+SQL Server Query
+---
+```
+Select * from[dbo].[LITA_Capstone_Customer_Data]
+
+---1. Retrieve Total Number of Customer from each region for Customer Data----
+
+Select [Region],Count (CustomerID) as Total_No_of_Customers from [dbo].[LITA_Capstone_Customer_Data]
+Group by Region
+
+
+--Q2 Most popular subscription type by the number of customers.
+
+SELECT SubscriptionType,COUNT(CustomerID)AS No_Of_Customers
+FROM [dbo].[LITA_Capstone_Customer_Data]
+GROUP BY SubscriptionType
+
+--Q3  Find customers who canceled their subscription within 6 months
+
+SELECT CustomerName,Canceled,SubscriptionStart
+FROM [dbo].[LITA_Capstone_Customer_Data]
+WHERE Canceled =1 AND MONTH(SubscriptionStart) BETWEEN 1 AND 6
+
+
+-- Q4 Calculate the average subscription duration for all customers
+SELECT Count(CustomerID) As All_Customers,AVG(DATEDIFF(DAY,SubscriptionStart,SubscriptionEnd)) AS Average_Subscription_Duration
+FROM [dbo].[LITA_Capstone_Customer_Data]
+WHERE SubscriptionEnd IS NOT NULL
+
+----Q5  Find customers with subscriptions longer than 12 months.DATEDIFF
+SELECT CustomerName,SubscriptionType,SubscriptionStart,SubscriptionEnd
+FROM [dbo].[LITA_Capstone_Customer_Data]
+WHERE DATEDIFF(MONTH,SubscriptionStart,SubscriptionEnd) >=12
+
+--- Q6  calculate total revenue by subscription type
+ SELECT SubscriptionType,SUM(Revenue) AS Total_Revenue
+ FROM[dbo].[LITA_Capstone_Customer_Data]
+ GROUP BY SubscriptionType
+
+```
 
 
   ![CUSTOMER DATA CAPSTONE](https://github.com/user-attachments/assets/cc739109-ec58-4b36-9964-5f3419499e14)
